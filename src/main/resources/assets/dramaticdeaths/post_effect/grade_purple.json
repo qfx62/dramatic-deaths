@@ -1,0 +1,74 @@
+{
+	"targets": {
+		"swap": {}
+	},
+	"passes": [
+		{
+			"vertex_shader": "minecraft:core/screenquad",
+			"fragment_shader": "minecraft:post/color_convolve",
+			"inputs": [
+				{
+					"sampler_name": "In",
+					"target": "minecraft:main"
+				}
+			],
+			"output": "swap",
+			"uniforms": {
+				"ColorConfig": [
+					{
+						"name": "RedMatrix",
+						"type": "vec3",
+						"value": [
+							0.5202,
+							0.4213,
+							0.0785
+						]
+					},
+					{
+						"name": "GreenMatrix",
+						"type": "vec3",
+						"value": [
+							0.1638,
+							0.5561,
+							0.0601
+						]
+					},
+					{
+						"name": "BlueMatrix",
+						"type": "vec3",
+						"value": [
+							0.2478,
+							0.4873,
+							0.4449
+						]
+					}
+				]
+			}
+		},
+		{
+			"vertex_shader": "minecraft:core/screenquad",
+			"fragment_shader": "minecraft:post/blit",
+			"inputs": [
+				{
+					"sampler_name": "In",
+					"target": "swap"
+				}
+			],
+			"uniforms": {
+				"BlitConfig": [
+					{
+						"name": "ColorModulate",
+						"type": "vec4",
+						"value": [
+							0.92,
+							0.92,
+							0.92,
+							1.0
+						]
+					}
+				]
+			},
+			"output": "minecraft:main"
+		}
+	]
+}

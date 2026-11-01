@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "dev.dramaticdeaths.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"CameraMixin",
+		"DeathScreenAccessor",
+		"GameRendererMixin",
+		"GuiMixin",
+		"HudMixin",
+		"TimerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

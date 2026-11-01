@@ -1,0 +1,24 @@
+{
+	"schemaVersion": 1,
+	"id": "dramaticdeaths",
+	"version": "${version}",
+	"name": "Dramatic Deaths",
+	"description": "Turns every death into a movie scene: slow motion, a killcam, a different cinematic for every way to die, and a title that burns, sinks or gets crushed by an anvil.",
+	"authors": [
+		"qfxdev"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/dramatic-deaths"
+	},
+	"license": "LicenseRef-All-Rights-Reserved",
+	"icon": "assets/dramaticdeaths/icon.png",
+	"environment": "client",
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25"
+	},
+	"mixins": [
+		"dramaticdeaths.mixins.json"
+	]
+}
